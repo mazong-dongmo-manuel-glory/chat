@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+{% block static_files %}
+<link rel="stylesheet" href="/static/css/home.css">
+{% endblock %}
+{% block content %}
+{% include "header_home.html"%}
+<audio class="notify" style="display: none;" src="/static/audio/mail.wav"></audio>
+<div class="option">
+        <div class="logo">OZOOWI</div>
+        <span class="profile">
+                {% if data.profile != None %}
+                   <input type="file" class="photo_profile">
+                   {% include "avatar.html" %}
+                {% else %}
+                   <img src="/{{data.profile}}">
+                {% endif %}
+        </span>
+        <span class="username">
+                {{data.username}}
+        </span>
+        <span class="date">
+                Connecte a : {{data.date}}
+        </span>
+</div>
+<div class="msgzone">
+    {% for m in message %}
+      <div class="msgbox {% if m.author == data.username %}emiter{% endif %}">
+        <span class="username_msg ">{{m.author}}</span>
+        <p>
+            {{m.content}}
+        </p>
+        <span class="date_msg">
+            {{m.date}}
+        </span>
+    </div>
+    {% endfor %}
+</div>
+<div class="form">
+        <form method="dialog" action="">
+                <textarea class="msg" placeholder="message">
+                </textarea>
+                <div class="btn">
+                        <span class="tools sound" name='son'>
+                                <a title="son"><img src="/static/image/audio.png"></a>
+                        </span>
+                        <span  class="tools file" name='fichier'>
+                                <a title="fichier"><img src="/static/image/server.png"></a>
+                        </span>
+                        <span class="tools stycker" name='stycker'>
+                                <img src="/static/image/emoji.png">
+                        </span>
+                        <span   class="tools send" name='send' >
+                                <a title="envoyer"><img src="/static/image/send-button.png"></a>
+                        </span>
+                </div>
+        </form>
+</div>
+<script src="/static/js/socket.io.js"></script>
+<script src="/static/js/chat.js"></script>
+{% endblock %}

@@ -1,0 +1,243 @@
+html header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: fixed;
+}
+.msg{
+    outline: none;
+}
+.logo{
+    display: block;
+    background: #2ed498;
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 30px;
+
+}
+.menu{
+    display: flex;
+}
+.menu a{
+    display: inline-block;
+    height:50px;
+    width:30px;
+    margin: 0 30px;
+}
+.menu a img{
+    width:100%;
+}
+span.tools{
+    width: 24.99%;
+    display: inline-block;
+    margin: 3px 0;
+    padding: 0.1%;
+    border-radius: 10%;
+    transition: transform 0.3s  ease-in-out;
+}
+
+span.tools img{
+    width: 70%;
+   
+}
+.form{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 70%;
+    height: 40px;
+    background: #2ed498;
+    transition:transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 1000;
+    
+}
+.form form{
+    width:100%;
+    display: flex;
+}
+.msg{
+    width: 80%;
+    height: 40px;
+    resize: none;
+    padding-top:10px;
+    padding-left: 10px;
+    font-size: 16px;
+    font-family:"Open Sans";
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+span.tools:hover{
+    transform: scale(1.09);
+}
+@media screen and (max-width:700px){
+    span.tools img{
+        width: 100%;   
+    }
+}
+@media screen and (max-width:400px){
+    .menu a{
+        margin: 0 20px;
+    }
+    .logo{
+        display: none;
+    }
+}
+.option{
+    position: fixed;
+    left: 0;
+    top: 70px;
+    width: 30%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(34, 94, 173);
+    transition:transform 0.5s;
+    overflow-y:scroll;
+    z-index: 300;
+}
+.profile{
+    display: block;
+    position: relative;
+    width:200px;
+    height:150px;
+   
+}
+.profile svg{
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin:0 auto;
+}
+.profile img{
+    width: 100%;
+}
+.wave{
+    position: fixed;
+    left: -10px;
+    bottom: -300px;
+    width: 20%;
+    height: 90%;
+    z-index: 900;
+}
+.wave img{
+    width: 100%;
+}
+.msg::placeholder{
+    text-align: center;
+}
+.username{
+    color: white;
+    font-size: 19px;
+    font-weight: bolder;
+}
+.option.hidden{
+    transform: translateX(-100%);
+}
+.form.max{
+    transform: translateX(-20%) translateY(-20px);
+    box-shadow: 0 10px 10px rgba(0,0,0,.12);
+}
+@media screen and (max-width:799px){
+    .option{
+        transform: translateX(-100%);
+    }
+    .form{
+        position: none;
+        width:100%;
+    }
+    .form.max{
+        transform: none;
+    }
+    .option.all{
+        width: 100%;
+        transform: none;
+    }
+    .form.none{
+        transform: translateY(100px)
+    }
+    html .msgzone{
+        width:100%;
+    }
+}
+@media screen and (max-width:400px){
+    html .msg{
+        width: 70%;
+    }
+    html .btn{
+        width: 30%;
+    }
+}
+.photo_profile{
+    position: absolute;
+    width:200px;
+    height:150px;
+    bottom: 0;
+    top: 0;
+    left:0;
+    right:0;
+    opacity: 0;
+}
+.msgzone{
+    position: fixed;
+    top:70px;
+    right:0;
+    width: 70%;
+    background: white;
+    height:100%;
+    padding-top: 100px;
+    padding-bottom: 200px;
+    z-index: 100;
+    overflow-y: scroll;
+}
+.msgbox{
+    width: 70%;
+    height: auto;
+    background: #2ed498;
+    margin: 10px auto;
+    border-radius: 3px;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s;
+}
+.msgzone.max{
+    width: 100%;
+}
+.msgbox.recive{
+    transform: translateX(-5%);
+}
+.msgbox.emiter{
+    transform: translateX(5%);
+    background:rgb(34, 94, 173);
+    color: white;
+}
+.msgbox p{
+    height: max-content;
+    padding-left: 30px;
+}
+.username_msg,.date_msg{
+    width:100%;
+    display: inline-block;
+    margin: 0;
+    overflow: hidden;
+    color: tomato;
+    padding: 5px;
+}
+.username_msg{
+    text-align: left;
+    font-size: 16px;
+}
+.date_msg{
+    text-align: right;
+    font-size: 13px;
+    color: black;
+}

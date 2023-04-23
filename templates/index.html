@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% block static_files %}
+<link rel="stylesheet" type="text/css" href="/static/css/sing.css">
+{% endblock %}
+{% block content %}
+{% include "header.html"%}
+<div class="wave">
+    <img src="/static/image/wave.png" alt="wave">
+</div>
+<div class="form">
+    <h3 class="form-name">Connexion</h3>
+    <div class="banner">
+        {% include "avatar.html" %}
+    </div>
+    <ul class="error">
+       {%for e in error %}
+          <li>{{e}}</li>
+        {%endfor%}
+    </ul>
+    <form method="POST" action="/">
+        <div class="form-group">
+            <label>Nom d'utilisateur</label>
+            <input type="text" name="username" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label>Mots de passe</label>
+                <input type="password" name="password" utocomplete="off">
+        </div>
+        <div class="form-group">
+            <button type="submit"class='submit'>
+                Connexion
+            </button>
+        </div>
+    </form>
+</div>
+{% include "footer.html" %}
+{% endblock %}

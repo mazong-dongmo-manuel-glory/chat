@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block static_files %}
+<link rel="stylesheet" type="text/css" href="/static/css/error.css">
+{% endblock %}
+{% block content %}
+{% include "header.html"%}
+<div class="content">
+    <p>Desoler La page demander n'existe pas <span class="big">:-)</span></p>
+</div>
+{% include "footer.html" %}
+{% endblock %}

@@ -1,0 +1,79 @@
+.form{
+    width: 30%;
+    margin: 100px auto;
+    background: white;
+    z-index: 0;
+}
+.form-name{
+    text-align: center;
+}
+.submit{
+    background: rgb(34, 94, 173);
+    display: block;
+    margin: 0 auto;
+    color: white;
+    width: 200px;
+    height: 50px;
+    border-radius: 20px;
+    font-size: 20px;
+    border: none;
+    border: none; 
+    box-shadow: 0 10px 20px rgba(0,0,0,.3);
+
+}
+.form-group{
+    position: relative;
+}
+.form-group label{
+    position: absolute;
+    top: -10px;
+}
+.form-group input{
+    font-size: 17px;
+    border: none;
+    margin:20px 0;
+    border-bottom: 3px solid  rgb(34, 94, 173);
+    width: 100%;
+    outline: none;
+    transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) margin;
+    background: transparent;
+}
+.form-group input:focus{
+    margin: 30px 0;
+    border-color: #2ed498;
+}
+.wave{
+    position: fixed;
+    left: 0;
+    bottom: -100px;
+    width: 50%;
+    height: 90%;
+    z-index: 900;
+}
+.wave img{
+    width: 100%;
+    
+}
+svg{
+    display: block;
+    height: 100px;
+    width:100px;
+    margin: 30px auto;
+}
+.error{
+    background: rgb(255, 106, 106);
+    color: white;
+    list-style: symbols('$');
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+@media screen and (max-width:700px){
+    .form{
+        width: 90%;
+    }
+    .wave{
+        bottom: -300px;
+    }
+
+}
